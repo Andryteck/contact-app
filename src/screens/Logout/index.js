@@ -1,10 +1,11 @@
 import React from 'react';
+import {View} from 'react-native'
 
 const Logout = () => {
     return (
-        <div>
-
-        </div>
+        <View>
+3333
+        </View>
     );
 };
 

@@ -16,27 +16,27 @@ const AppNavContainer = () => {
     const [isAuthenticated, setIsAuthenticated] = React.useState(isLoggedIn);
     const [authLoaded, setAuthLoaded] = React.useState(false);
 
-    const getUser = async () => {
-        try {
-            const user = await AsyncStorage.getItem('user');
-            if (user) {
-                setAuthLoaded(true);
-
-                setIsAuthenticated(true);
-            } else {
-                setAuthLoaded(true);
-
-                setIsAuthenticated(false);
-            }
-        } catch (error) {}
-    };
-    useEffect(() => {
-        getUser();
-    }, [isLoggedIn]);
-
-    React.useEffect(() => {
-        SplashScreen.hide();
-    }, []);
+    // const getUser = async () => {
+    //     try {
+    //         const user = await AsyncStorage.getItem('user');
+    //         if (user) {
+    //             setAuthLoaded(true);
+    //
+    //             setIsAuthenticated(true);
+    //         } else {
+    //             setAuthLoaded(true);
+    //
+    //             setIsAuthenticated(false);
+    //         }
+    //     } catch (error) {}
+    // };
+    // useEffect(() => {
+    //     getUser();
+    // }, [isLoggedIn]);
+    //
+    // React.useEffect(() => {
+    //     SplashScreen.hide();
+    // }, []);
 
     return (
         <>
