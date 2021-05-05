@@ -1,10 +1,11 @@
 import React from 'react';
+import {View} from 'react-native'
 
 const CreateContact = () => {
     return (
-        <div>
-
-        </div>
+        <View>
+333
+        </View>
     );
 };
 

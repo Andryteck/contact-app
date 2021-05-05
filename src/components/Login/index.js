@@ -35,20 +35,22 @@ const LoginComponent = ({
                 <View style={styles.form}>
                     {justSignedUp && (
                         <Message
-                            onDismiss={() => {}}
+                            onDismiss={() => {
+                            }}
                             success
                             message="Account created successfully"
                         />
                     )}
                     {error && !error.error && (
                         <Message
-                            onDismiss={() => {}}
+                            onDismiss={() => {
+                            }}
                             danger
                             message="invalid credentials"
                         />
                     )}
 
-                    {error?.error && <Message danger onDismiss message={error?.error} />}
+                    {error?.error && <Message danger onDismiss message={error?.error}/>}
 
                     <Input
                         label="Username"
