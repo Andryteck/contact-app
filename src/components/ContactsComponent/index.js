@@ -22,7 +22,7 @@ const ContactsComponent = ({sortBy, data, loading, setModalVisible}) => {
   const swipeableItemRefs = useRef([]);
   // console.log('swipeableItemRefs', swipeableItemRefs);
 
-  const toggleSwipeable = (key) => {
+  const toggleSwipeable = key => {
     swipeableItemRefs.current.forEach((ref, i) => {
       if (ref.id !== key) {
         swipeableItemRefs.current?.[i]?.swipeable?.close();
@@ -79,7 +79,7 @@ const ContactsComponent = ({sortBy, data, loading, setModalVisible}) => {
     const {id} = item;
     return (
       <Swipeable
-        ref={(ref) =>
+        ref={ref =>
           swipeableItemRefs.current.push({
             id,
             swipeable: ref,
@@ -156,30 +156,29 @@ const ContactsComponent = ({sortBy, data, loading, setModalVisible}) => {
               data={
                 sortBy
                   ? data.sort((a, b) => {
-                    if (sortBy === 'First Name') {
-                      if (b.first_name > a.first_name) {
-                        return -1;
-                      } else {
-                        return 1;
+                      if (sortBy === 'First Name') {
+                        if (b.first_name > a.first_name) {
+                          return -1;
+                        } else {
+                          return 1;
+                        }
                       }
-                    }
-                    if (sortBy === 'Last Name') {
-                      if (b.last_name > a.last_name) {
-                        return -1;
-                      } else {
-                        return 1;
+                      if (sortBy === 'Last Name') {
+                        if (b.last_name > a.last_name) {
+                          return -1;
+                        } else {
+                          return 1;
+                        }
                       }
-                    }
-                  })
+                    })
                   : data
               }
               ItemSeparatorComponent={() => (
-                <View
-                  style={{height: 0.5, backgroundColor: colors.grey}}></View>
+                <View style={{height: 0.5, backgroundColor: colors.grey}} />
               )}
-              keyExtractor={(item) => String(item.id)}
+              keyExtractor={item => String(item.id)}
               ListEmptyComponent={ListEmptyComponent}
-              ListFooterComponent={<View style={{height: 150}}></View>}
+              ListFooterComponent={<View style={{height: 150}} />}
             />
           </View>
         )}
