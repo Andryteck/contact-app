@@ -28,7 +28,7 @@ export default ({password, userName: username}) => (dispatch) => {
         type: LOGIN_FAIL,
         payload: err.response
           ? err.response.data
-          : {error: 'Something went wrong, try agin'},
+          : {error: 'Something went wrong, try again'},
       });
     });
 };
